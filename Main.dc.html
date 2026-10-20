@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Emu Search Homepage</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Newsreader:ital,wght@0,300;0,400;1,300&amp;display=swap">
+<style>
+body{margin:0}
+.p{font-family:'Manrope',sans-serif;color:#1F2F3D;background:#fff;overflow:clip;-webkit-font-smoothing:antialiased}
+.p *{box-sizing:border-box}
+.p h1,.p h2,.p h3,.p p{margin:0}
+.p a{text-decoration:none;color:inherit}
+.s{padding:120px 80px;max-width:1440px;margin:0 auto}
+.serif{font-family:'Newsreader',serif;font-weight:300;letter-spacing:-.02em}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#8A7A3A}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 30px;border-radius:999px;font-size:15px;font-weight:600;transition:transform .3s,background .3s,color .3s}
+.btn:hover{transform:translateY(-3px)}
+.g{background:#DDA43E;color:#1F2F3D}
+.o{border:1px solid #1F2F3D;color:#1F2F3D}
+.o:hover{background:#1F2F3D;color:#fff}
+.nav a.l{font-size:15px;font-weight:500;position:relative}
+.nav a.l:after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:#DDA43E;transition:width .3s}
+.nav a.l:hover:after{width:100%}
+@keyframes fu{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes sc{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
+.ld{animation:fu 1s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}
+.fu{animation:fu 1s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 0% entry 45%}
+.zi{animation:sc 1s ease both;animation-timeline:view();animation-range:entry 0% entry 60%}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-10px)}
+.card img{transition:transform .8s}
+.card:hover img{transform:scale(1.05)}
+.ex{border-top:1px solid #1F2F3D33;padding:40px 0 0;transition:border-color .3s}
+.ex:hover{border-color:#DDA43E}
+.pill{position:relative;padding:16px 34px;border-radius:999px;font-size:15px;font-weight:500;transition:transform .6s cubic-bezier(.34,1.56,.64,1),box-shadow .4s}
+.pills:has(.pill:hover) .pill{transform:translate(-14px,-6px) rotate(-3deg)}
+.pills:has(.pill:hover) .pill:hover{transform:scale(1.16) rotate(4deg);z-index:2;box-shadow:0 18px 40px #00000040}
+.pills:has(.pill:hover) .pill:hover ~ .pill{transform:translate(16px,8px) rotate(3deg)}
+.pill:hover:after{content:"";position:absolute;inset:0;border-radius:999px;border:2px solid #DDA43E;animation:rp .8s ease-out both;pointer-events:none}
+.pill:hover:before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#DDA43E;box-shadow:-70px -34px 0 -2px #DDA43E,64px -38px 0 -3px #AEB983,-48px 40px 0 -3px #AEB983,80px 30px 0 -2px #DDA43E;animation:sp .7s ease-out both;pointer-events:none}
+@keyframes rp{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.45,1.9)}}
+@keyframes sp{from{opacity:1;transform:scale(.2)}to{opacity:0;transform:scale(1.6)}}
+@property --a{syntax:'<integer>';inherits:false;initial-value:0}
+@property --b{syntax:'<integer>';inherits:false;initial-value:0}
+@keyframes k1{to{--a:100}}@keyframes k2{to{--a:64}}@keyframes k3{to{--a:4;--b:5}}
+@supports (animation-timeline:view()){.n{font-size:0;counter-reset:a var(--a) b var(--b);animation:k1 both ease-out;animation-timeline:--ab;animation-range:cover 44% cover 53%}.n2{animation-name:k2}.n3{animation-name:k3}.n:before{font-size:var(--ns,56px);content:counter(a)}.n3:before{content:counter(a) "." counter(b)}}
+@keyframes pw{from{width:0;margin-left:0;margin-right:0}}
+.pl{display:inline-block;vertical-align:middle;position:relative;height:1.15em;width:3.6em;margin:0 .12em;border-radius:999px;overflow:hidden;animation:pw 1.2s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 10% entry 75%}
+.pl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@keyframes wr{from{color:#1F2F3D26}to{color:var(--c)}}
+@keyframes cg{from{transform:scale(0)}to{transform:scale(1)}}
+.w{color:var(--c);animation:wr linear both;animation-timeline:--pt}
+.cir{animation:cg linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+.st{flex:1 1 200px;padding:36px 32px 40px;border-left:1px solid #DDA43E55;border-radius:6px;transition:background .55s cubic-bezier(.2,.7,.2,1),color .45s}
+.st:first-child{border-left:0}
+.st:hover{color:#fff}.st:nth-child(1):hover{background:#1F2F3D}.st:nth-child(2):hover{background:#DDA43E}.st:nth-child(3):hover{background:#AEB983}
+.trk{view-timeline:--ab}
+@keyframes gf{from{opacity:0;transform:translateY(.5em)}to{opacity:1;transform:none}}
+@keyframes gw{from{color:#fff}to{color:#DDA43E}}
+@keyframes ck{from{left:-320px;top:70px}to{left:calc(100% - 230px);top:0}}
+@keyframes su{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){.trk{height:300vh}.ck{animation:ck linear both;animation-timeline:--ab;animation-range:cover 27% cover 68%}.su{animation:su cubic-bezier(.2,.7,.2,1) both;animation-timeline:--ab}}
+.trk2{view-timeline:--cs}
+@keyframes pg{from{height:1.15em;width:3.6em;border-radius:999px}to{height:3.4em;width:2.9em;border-radius:.6em}}
+@supports (animation-timeline:view()){.trk2{height:290vh}.pl.p1{animation:pg cubic-bezier(.5,0,.3,1) both;animation-timeline:--cs;animation-range:cover 30% cover 62%}}
+.pk{display:block;flex:none;position:relative;width:4.4em;height:1.3em;border-radius:.65em;overflow:hidden}
+.pk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@keyframes k1{0%,3%{height:1.3em}21%,30%{height:3.2em}50%,100%{height:1.3em}}
+@keyframes k2{0%,30%{height:1.3em}50%,59%{height:3.2em}79%,100%{height:1.3em}}
+@keyframes k3{0%,59%{height:1.3em}79%,87%{height:3.2em}98%,100%{height:1.3em}}
+@supports (animation-timeline:view()){.trk2{height:480vh;margin-bottom:calc(-92vh + 3.9*clamp(36px,8vw,150px))}.pk{animation:k1 ease-in-out both;animation-timeline:--cs;animation-range:cover 19% cover 81%}.k2{animation-name:k2}.k3{animation-name:k3}}
+.acc{display:flex;gap:8px;height:650px}
+.p .pn,.p .pn *{color:#fff}
+.pn{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border-radius:14px;color:#fff;display:block;transition:flex-grow .9s cubic-bezier(.2,.7,.2,1)}
+.pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.pn:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#000000B3 0%,#00000000 55%)}
+.p a.pn,.p a.pn *{color:#fff}
+.pn .t{position:absolute;left:28px;bottom:28px;z-index:2;display:flex;flex-direction:column;gap:12px}
+.pn .l{font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;width:120px}
+.pn .d{width:440px;display:flex;flex-direction:column;gap:14px;font-size:15px;line-height:1.55;opacity:0;transition:opacity .6s}
+.pn .d span{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
+.pn.a{flex-grow:6}.pn.a .d{opacity:1}
+@keyframes ag{0%,28%{flex-grow:6}34%,94%{flex-grow:1}100%{flex-grow:6}}
+@keyframes dv{0%,24%{opacity:1}30%,94%{opacity:0}100%{opacity:1}}
+.acc:hover .pn,.acc:hover .pn .d{animation:none}
+.acc:hover .pn{flex-grow:1}.acc:hover .pn .d{opacity:0;transition:opacity .5s}
+.acc:hover .pn:hover{flex-grow:6}.acc:hover .pn:hover .d{opacity:1}
+.pn:hover img{transform:scale(1.04)}
+.ic{position:sticky;display:flex;gap:56px;align-items:center;background:#fff;border-radius:28px;padding:20px;box-shadow:0 12px 50px #1F2F3D1A;margin-bottom:42vh}
+.ic:last-child{margin-bottom:34vh}
+.ic .im{flex:1 1 46%;min-width:0;height:460px;border-radius:20px;overflow:hidden}
+.ic .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s}
+.ic:hover .im img{transform:scale(1.05)}
+@keyframes rv{from{transform:translateY(108%)}to{transform:none}}
+.wm{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .18em}
+.wm>span{display:block;animation:rv 1s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view()}
+.trk3{view-timeline:--ex}
+@supports (animation-timeline:view()){.trk3{height:250vh}.trk3 .wm>span{animation-timeline:--ex;animation-timing-function:cubic-bezier(.3,.6,.2,1)}}
+.trk4{view-timeline:--in}
+.ic.i4{position:absolute;left:80px;right:80px;margin:0;align-items:stretch;height:clamp(320px,calc(100vh - 242px),500px)}
+.ic.i4 .im{height:auto;position:relative}.ic.i4 .im img{position:absolute;inset:0}
+.ic.i4 .cp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden}
+@media(max-height:820px){.ic.i4 .cp{-webkit-line-clamp:4}.ic.i4 h3{font-size:clamp(20px,2vw,28px)!important}}
+@keyframes cu{from{transform:translateY(108vh)}to{transform:none}}
+@supports (animation-timeline:view()){.trk4{height:340vh}.ic.i4.c2,.ic.i4.c3{animation:cu cubic-bezier(.3,.6,.2,1) both;animation-timeline:--in}.ic.i4.c2{animation-range:cover 28% cover 45%}.ic.i4.c3{animation-range:cover 52% cover 69%}}
+.hw{display:inline-block;animation:fu .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(3.2s + var(--k)*.3s)}
+.hz{animation:fu 1.3s cubic-bezier(.2,.7,.2,1) 3.7s both}
+.hb{animation:fu 1s cubic-bezier(.2,.7,.2,1) 3.1s both}
+.gr{font-family:'Newsreader',serif;font-style:italic;font-weight:300;color:#DDA43E;letter-spacing:-.02em}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes cc{0%,100%{color:#000}50%{color:#DDA43E}}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mt{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq:hover .mt{animation-play-state:paused}
+.mg{display:flex;align-items:center;flex:none}
+.mi{font-size:clamp(44px,6vw,92px);font-weight:400;letter-spacing:-.035em;line-height:1.2;color:#000;animation:cc 7s ease-in-out infinite;animation-delay:calc(var(--k)*-.7s)}
+.ms{flex:none;width:.62em;height:.62em;margin:0 .55em;font-size:clamp(44px,6vw,92px)}
+@media(prefers-reduced-motion:reduce){.mt,.mi{animation:none}}
+@keyframes rwk{from{color:#1F2F3D1F}to{color:var(--c)}}
+.rw{color:var(--c)}
+@supports (animation-timeline:view()){.rw{color:#1F2F3D1F;animation:rwk linear both;animation-timeline:--ab}}
+@keyframes cg2{from{transform:scale(0)}to{transform:none}}
+.cr2{position:absolute;z-index:1;right:-140px;top:-90px;width:clamp(260px,29vw,420px);height:clamp(260px,29vw,420px);border-radius:50%;background:#AEB983}
+@keyframes bm{0%{transform:translate(calc(-100vw + 110px),5vh)}62%,100%{transform:none}}
+@supports (animation-timeline:view()){.cr2{animation:bm linear both;animation-timeline:--ab;animation-range:cover 24% cover 75%}}
+.fq{border-bottom:1px solid #1F2F3D26}
+.fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-size:clamp(17px,1.5vw,21px);font-weight:500;transition:color .3s}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary:hover{color:#DDA43E}
+.fq summary:after{content:"+";flex:none;font-size:28px;font-weight:300;line-height:1;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.fq[open] summary:after{transform:rotate(45deg)}
+.fq p{padding:0 56px 28px 0;font-size:16px;line-height:1.7;color:#1F2F3DCC}
+.fq[open] p{animation:fu .5s cubic-bezier(.2,.7,.2,1) both}
+.trk5{view-timeline:--vd}
+.vbox{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,1280px);height:min(74vh,640px);border-radius:28px;overflow:hidden;background:#DDA43E}
+.vbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vbox:before{content:"";position:absolute;inset:0;background:#1F2F3D4D;z-index:1}
+.vpl{position:absolute;left:50%;top:50%;z-index:2;width:104px;height:64px;margin:-32px 0 0 -52px;border-radius:32px;background:#fff;display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.vpl:hover{transform:scale(1.12)}
+.vsq{display:none;position:absolute;left:50%;width:420px;height:520px;margin-left:-210px;bottom:calc(50% + 75px);pointer-events:none}
+@keyframes vdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes vfade{from{opacity:1}to{opacity:0}}
+@keyframes vbo{from{opacity:0}to{opacity:1}}
+@keyframes vbox{from{width:230px;height:150px;border-radius:18px}to{width:min(92vw,1280px);height:min(74vh,640px);border-radius:28px}}
+@keyframes vim{from{opacity:0}to{opacity:1}}
+@keyframes vpl{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){
+.trk5{height:300vh}
+.vsq{display:block;animation:vfade linear both;animation-timeline:--vd;animation-range:cover 45% cover 52%}
+.vsq path{stroke-dasharray:1;animation:vdraw linear both;animation-timeline:--vd;animation-range:cover 26% cover 40%}
+.vbox{animation:vbo linear both,vbox cubic-bezier(.6,0,.2,1) both;animation-timeline:--vd,--vd;animation-range:cover 38% cover 42%,cover 44% cover 62%}
+.vbox:before,.vbox img{animation:vim linear both;animation-timeline:--vd;animation-range:cover 50% cover 62%}
+.vbox:before{animation-name:vim}
+.vpl{animation:vpl cubic-bezier(.2,.7,.2,1) both;animation-timeline:--vd;animation-range:cover 60% cover 68%}}
+@keyframes ibg{0%,60%{background:#FCF6E8;opacity:1}76%,88%{background:#1F2F3D;opacity:1}100%{background:#1F2F3D;opacity:0;visibility:hidden}}
+@keyframes izoom{0%,52%{transform:none;animation-timing-function:cubic-bezier(.75,0,.9,.5)}80%,100%{transform:scale(26)}}
+@keyframes ilg{0%,26%{opacity:0}33%,100%{opacity:1}}
+@keyframes ibk{0%{transform:scaleY(0)}14%,28%{transform:none;opacity:1}34%,100%{transform:none;opacity:0}}
+.intro{position:fixed;inset:0;z-index:999;background:#FCF6E8;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:ibg 3.6s linear both}
+.lw{position:relative;width:min(44vw,640px);aspect-ratio:2/1;transform-origin:56% 49%;animation:izoom 3.6s linear both}
+.lgo{position:absolute;inset:0;width:100%;height:100%;opacity:0;animation:ilg 3.6s linear both}
+.bk{position:absolute;top:31.6%;height:32.7%;background:#1F2F3D;border-radius:4px;transform-origin:50% 100%;opacity:0;animation:ibk 3.6s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
+.lgm{position:relative;display:block;overflow:hidden;width:var(--w);height:calc(var(--w)*.2531)}
+.lgm img{position:absolute;display:block;max-width:none;width:calc(var(--w)*1.5504);height:auto;left:calc(var(--w)*-.2667);top:calc(var(--w)*-.2448)}
+@media(max-width:820px){.ic.i4{left:20px;right:20px}.s{padding:72px 24px}.row{flex-direction:column!important}.nav .l{display:none}}
+</style>
+</helmet>
+<div class="p" style="width:100%">
+
+<div class="intro" aria-hidden="true"><div class="lw"><img class="lgo" src="./assets/eff58810988572e665d2f068994b2f13.png" alt=""><i class="bk" style="left:17.2%;width:16.9%;--d:.2s"></i><i class="bk" style="left:35.8%;width:25.6%;--d:.32s"></i><i class="bk" style="left:63.1%;width:18.4%;--d:.44s"></i></div></div>
+<!-- 1+2 NAV + HERO -->
+<section id="top" style="position:relative;overflow:hidden;background:#FCF6E8">
+<header class="nav ld" style="animation-delay:3.1s;position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:24px;width:calc(100% - 80px);max-width:1280px;margin:24px auto 0;padding:10px 12px 10px 44px;background:#fff;border-radius:999px;box-shadow:0 6px 32px #DDA43E33;flex-wrap:wrap">
+<a href="#top" aria-label="Emu home" class="lgm" style="--w:96px"><img src="./assets/eff58810988572e665d2f068994b2f13.png" alt="emu"></a>
+<nav style="display:flex;align-items:center;gap:52px;flex-wrap:wrap">
+<a class="l" href="#about" style="font-size:16px">About</a><a class="l" href="#expertise" style="font-size:16px">Service</a><a class="l" href="#stories" style="font-size:16px">Case Studies</a>
+<a class="btn g" href="#contact" style="height:58px;font-size:17px;padding:0 34px;color:#fff;font-weight:500">Contact Us</a>
+</nav>
+</header>
+<div class="row" style="display:flex;align-items:center;gap:40px;max-width:1280px;margin:0 auto;padding:0 80px;min-height:680px">
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:44px;padding:60px 0;position:relative;z-index:2">
+<h1 style="font-size:clamp(40px,5.2vw,76px);font-weight:700;line-height:1.22;letter-spacing:-.03em">
+<span style="display:block"><span class="hw" style="--k:0">Private</span> <span class="hw" style="--k:1">Equity</span></span>
+<span style="display:block"><span class="hw" style="--k:2">Leadership</span> <span class="hw" style="--k:3">Built</span></span>
+<span style="display:block"><span class="hw" style="--k:4">for</span> <span class="hw gr" style="--k:5">Growth</span></span>
+</h1>
+<div class="hb" style="display:flex;gap:16px;flex-wrap:wrap">
+<a class="btn" href="#contact" style="background:#1F2F3D;color:#fff;border-radius:4px;height:48px;gap:14px;font-weight:500">Speak to a Partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></a>
+<a class="btn o" href="#expertise" style="border-radius:4px;height:48px;border-color:#1F2F3D66;font-weight:400">Explore Our Approach</a>
+</div>
+</div>
+<div class="hz" style="position:absolute;right:0;bottom:0;width:min(54vw,800px);height:620px;z-index:1">
+<div style="position:absolute;left:50%;top:50px;width:540px;height:540px;margin-left:-270px;border:1px solid #DDA43E66;border-radius:50%"></div>
+<div style="position:absolute;left:50%;top:125px;width:390px;height:390px;margin-left:-195px;border:2px solid #DDA43E;border-radius:50%"></div>
+<img src="./assets/99a3623953204f2acb4b1630553d3485.png" alt="Executive portrait" style="position:absolute;right:0;bottom:0;height:620px;width:auto;max-width:none">
+</div>
+</div>
+</section>
+
+<!-- 3 ABOUT -->
+<section id="about" style="position:relative;background:#fff;overflow:clip">
+<div class="s" style="padding-top:100px;padding-bottom:100px">
+<div class="row" style="display:flex;align-items:flex-start">
+<div class="zi" style="flex:0 0 46%;min-width:0"><img src="./assets/709d03506018000342d6d6ec431e3ba0.png" alt="Architecture" style="width:100%;display:block"></div>
+<div style="flex:1 1 0;min-width:0;margin-left:-9%;position:relative">
+<h2 class="fu" style="font-size:clamp(64px,8.2vw,120px);font-weight:500;line-height:1;letter-spacing:-.04em;animation-range:entry 0% entry 45%">About Us</h2>
+<div style="margin:clamp(40px,6vw,90px) 0 0 clamp(0px,9vw,140px);display:flex;flex-direction:column;gap:18px;max-width:400px">
+<span class="fu" style="font-size:22px;color:#AEB983;animation-range:entry 5% entry 45%">Trust &amp; credibility</span>
+<p class="fu" style="font-size:16px;line-height:1.6;animation-range:entry 10% entry 50%">We partner with investors and businesses to identify the leadership talent that drives growth, transformation and long-term value.</p>
+<div class="fu" style="animation-range:entry 15% entry 55%"><a href="#contact" style="display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 22px;border:1px solid #DDA43E;border-radius:999px;font-size:13px;color:#DDA43E">Meet Mike <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#DDA43E" stroke-width="2.5" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="trk">
+<div style="position:sticky;top:0;height:100vh;overflow:clip">
+<div class="cr2"></div>
+<div class="s" style="position:relative;z-index:2;padding-top:110px">
+<p style="max-width:880px;font-size:clamp(26px,2.8vw,40px);font-weight:600;line-height:1.3;letter-spacing:-.02em"><span class="rw" style="--c:#111;animation-range:cover 24.0% cover 28.0%">We</span> <span class="rw" style="--c:#111;animation-range:cover 24.9% cover 28.9%">partner</span> <span class="rw" style="--c:#111;animation-range:cover 25.8% cover 29.8%">with</span> <span class="rw" style="--c:#111;animation-range:cover 26.7% cover 30.7%">investors</span> <span class="rw" style="--c:#111;animation-range:cover 27.6% cover 31.6%">and</span> <span class="rw" style="--c:#111;animation-range:cover 28.5% cover 32.5%">portfolio</span> <span class="rw" style="--c:#111;animation-range:cover 29.4% cover 33.4%">companies</span> <span class="rw" style="--c:#111;animation-range:cover 30.3% cover 34.3%">to</span> <span class="rw" style="--c:#111;animation-range:cover 31.2% cover 35.2%">build</span> <span class="rw" style="--c:#111;animation-range:cover 32.1% cover 36.1%">leadership</span> <span class="rw" style="--c:#111;animation-range:cover 33.0% cover 37.0%">teams</span> <span class="rw" style="--c:#111;animation-range:cover 33.9% cover 37.9%">that</span> <span class="rw" style="--c:#111;animation-range:cover 34.8% cover 38.8%">deliver</span> <span class="rw" style="--c:#111;animation-range:cover 35.7% cover 39.7%">value</span> <span class="rw" style="--c:#111;animation-range:cover 36.6% cover 40.6%">creation,</span> <span class="rw" style="--c:#AEB983;animation-range:cover 37.5% cover 41.5%">scale</span> <span class="rw" style="--c:#AEB983;animation-range:cover 38.4% cover 42.4%">effectively,</span> <span class="rw" style="--c:#AEB983;animation-range:cover 39.3% cover 43.3%">and</span> <span class="rw" style="--c:#AEB983;animation-range:cover 40.2% cover 44.2%">stand</span> <span class="rw" style="--c:#AEB983;animation-range:cover 41.1% cover 45.1%">up</span> <span class="rw" style="--c:#AEB983;animation-range:cover 42.0% cover 46.0%">to</span> <span class="rw" style="--c:#AEB983;animation-range:cover 42.9% cover 46.9%">exit</span> <span class="rw" style="--c:#AEB983;animation-range:cover 43.8% cover 47.8%">scrutiny.</span> </p>
+<div class="row" style="display:flex;margin-top:80px;margin-left:-32px;flex-wrap:wrap">
+<div class="st" style="overflow:hidden"><div class="su" style="animation-range:cover 48% cover 58%"><div style="--ns:clamp(56px,6.9vw,106px);font-size:clamp(56px,6.9vw,106px);font-weight:300;line-height:1.05;letter-spacing:-.03em"><span class="n n1">100</span>%</div><p style="font-size:18px;line-height:1.5;margin-top:14px;max-width:260px">Mandate completion across retained searches</p></div></div>
+<div class="st" style="overflow:hidden"><div class="su" style="animation-range:cover 50% cover 60%"><div style="--ns:clamp(56px,6.9vw,106px);font-size:clamp(56px,6.9vw,106px);font-weight:300;line-height:1.05;letter-spacing:-.03em"><span class="n n2">64</span>%</div><p style="font-size:18px;line-height:1.5;margin-top:14px;max-width:260px">Appointments enhance leadership diversity</p></div></div>
+<div class="st" style="overflow:hidden"><div class="su" style="animation-range:cover 52% cover 62%"><div style="--ns:clamp(56px,6.9vw,106px);font-size:clamp(56px,6.9vw,106px);font-weight:300;line-height:1.05;letter-spacing:-.03em"><span class="n n3">4.5</span>%</div><p style="font-size:18px;line-height:1.5;margin-top:14px;max-width:260px">Client rating across repeat PE partnerships</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 VIDEO -->
+<section class="trk5" style="background:#fff">
+<div style="position:sticky;top:0;height:100vh;overflow:clip">
+<svg class="vsq" viewBox="0 0 420 520" fill="none" aria-hidden="true"><path pathLength="1" d="M250 -20C90 60 350 130 200 225S90 335 235 405 210 480 210 520" stroke="#DDA43E" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div class="vbox"><img src="./assets/c6ea476eff8ca8f3407dd20366494048.png" alt="Executive lounge"><a class="vpl" href="#contact" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#1F2F3D"></path></svg></a></div>
+</div>
+</section>
+
+<!-- 5 EXPERTISE -->
+<section id="expertise" class="s" style="padding-top:0;padding-bottom:40px">
+<div class="trk3"><div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:clip"><h2 style="font-size:clamp(64px,14.5vw,208px);font-weight:500;line-height:1;letter-spacing:-.05em;color:#DDA43E;text-align:center"><span class="wm"><span style="animation-range:cover 31% cover 46%">Our</span></span> <span class="wm"><span style="animation-range:cover 48% cover 63%">expertise</span></span></h2></div></div>
+<div class="row" style="display:flex;gap:80px;align-items:flex-start">
+<div style="flex:1 1 420px;min-width:0;position:sticky;top:140px;align-self:flex-start;display:flex;flex-direction:column;gap:28px">
+
+<h2 style="font-size:clamp(40px,4.4vw,64px);font-weight:600;line-height:1.15;letter-spacing:-.03em;max-width:520px">Leadership built around your next stage.</h2>
+</div>
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:200px;padding-top:80px">
+<div class="fu" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:56px;font-weight:300">01</span><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#DDA43E" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="21"></circle><circle cx="24" cy="24" r="12"></circle><circle cx="24" cy="24" r="2.5"></circle><path d="M24 24l10-10"></path></svg></div>
+<h3 style="font-size:34px;font-weight:600;letter-spacing:-.02em">Market Visibility</h3>
+<p style="font-size:20px;line-height:1.65;color:#1F2F3DCC;max-width:600px">A clear view of the external market before we shortlist: who is relevant, how they compare, and what is realistically accessible.</p>
+</div>
+<div class="fu" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:56px;font-weight:300">02</span><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#DDA43E" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="21"></circle><path d="M32 16l-5 11-11 5 5-11z"></path></svg></div>
+<h3 style="font-size:34px;font-weight:600;letter-spacing:-.02em">Future Fit</h3>
+<p style="font-size:20px;line-height:1.65;color:#1F2F3DCC;max-width:600px">Leadership requirements shift as businesses scale. We focus on what the role demands next, not where the business has been.</p>
+</div>
+<div class="fu" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:56px;font-weight:300">03</span><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#DDA43E" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="21"></circle><circle cx="24" cy="24" r="14"></circle><circle cx="24" cy="24" r="7"></circle></svg></div>
+<h3 style="font-size:34px;font-weight:600;letter-spacing:-.02em">Targeted Access</h3>
+<p style="font-size:20px;line-height:1.65;color:#1F2F3DCC;max-width:600px">Personalised outreach that builds trust and genuine interest from high-caliber candidates in the opportunity.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5b ROLES MARQUEE -->
+<section class="mq" style="background:#fff;padding:50px 0 80px" aria-label="Roles we place">
+<div class="mt"><div class="mg"><span class="mi" style="--k:0">Board</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:1">CEO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:2">CIO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:3">CFO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:4">CSO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:5">COO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:6">CRO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:7">CMO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:8">CHRO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:9">Director</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg></div><div class="mg" aria-hidden="true"><span class="mi" style="--k:0">Board</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:1">CEO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:2">CIO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:3">CFO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:4">CSO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:5">COO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:6">CRO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:7">CMO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:8">CHRO</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg><span class="mi" style="--k:9">Director</span><svg class="ms" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DDA43E" d="M12 0C12.8 7 17 11.2 24 12 17 12.8 12.8 17 12 24 11.2 17 7 12.8 0 12 7 11.2 11.2 7 12 0Z"></path></svg></div></div>
+</section>
+
+<!-- 6 WHY EMU -->
+<section style="background:#1F2F3D;color:#fff">
+<div class="row" style="display:flex;align-items:stretch;min-height:760px">
+<div class="zi" style="flex:1 1 46%;min-width:0;min-height:420px;position:relative"><img src="./assets/b1202440ae6a0ad5567e5e01c92b9d53.png" alt="Boardroom at dusk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="flex:1 1 54%;min-width:0;padding:110px 80px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<span class="fu" style="font-size:18px;font-weight:500;color:#DDA43E;animation-range:entry 5% entry 45%">Why Emu ?</span>
+<h2 class="fu" style="font-size:clamp(34px,3.8vw,54px);font-weight:400;line-height:1.18;letter-spacing:-.03em;max-width:640px;animation-range:entry 10% entry 50%">The right leadership builds stronger businesses.</h2>
+<div style="display:flex;flex-direction:column;gap:36px;margin-top:12px">
+<div class="fu" style="display:flex;gap:18px;align-items:flex-start;animation-range:entry 25% entry 65%"><span style="flex:none;width:44px;height:44px;border-radius:50%;background:#DDA43E26;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DDA43E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"></path></svg></span><div><h3 style="font-size:20px;font-weight:600;margin-bottom:8px">Market Insight</h3><p style="font-size:16px;line-height:1.7;color:#ffffffB3;max-width:520px">We analyze market trends, talent availability, and competitor landscapes to identify the right leadership opportunities.</p></div></div>
+<div class="fu" style="display:flex;gap:18px;align-items:flex-start;animation-range:entry 35% entry 75%"><span style="flex:none;width:44px;height:44px;border-radius:50%;background:#DDA43E26;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DDA43E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path></svg></span><div><h3 style="font-size:20px;font-weight:600;margin-bottom:8px">Future-Focused Leadership Assessment</h3><p style="font-size:16px;line-height:1.7;color:#ffffffB3;max-width:520px">We evaluate leadership capabilities, strategic thinking, and long-term potential to support future business growth.</p></div></div>
+<div class="fu" style="display:flex;gap:18px;align-items:flex-start;animation-range:entry 45% entry 85%"><span style="flex:none;width:44px;height:44px;border-radius:50%;background:#DDA43E26;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DDA43E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6A8 8 0 1 1 21 12z"></path></svg></span><div><h3 style="font-size:20px;font-weight:600;margin-bottom:8px">Targeted Candidate Engagement</h3><p style="font-size:16px;line-height:1.7;color:#ffffffB3;max-width:520px">We connect with high-caliber candidates through personalized outreach, building trust and genuine interest in the opportunity.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7 CONSULT -->
+<section style="background:#fff">
+<div class="trk2">
+<div style="position:sticky;top:0;height:100vh;overflow:clip">
+<div style="padding:8vh 24px 0;text-align:center">
+<h2 style="font-size:clamp(36px,8vw,150px);font-weight:300;line-height:1.28;letter-spacing:-.035em">
+<span class="fu" style="display:flex;justify-content:center;align-items:flex-start;gap:.22em;animation-range:entry 0% entry 40%"><span>Consult with</span><span class="pk"><img src="./assets/d485b28e3a8990ae3b2f6b09accdc837.png" alt="" style="object-position:75% 40%"></span><span>us</span></span>
+<span class="fu" style="display:flex;justify-content:center;align-items:flex-start;gap:.22em;animation-range:entry 10% entry 50%"><span class="pk k2"><img src="./assets/74716d306e5debdafffc3d6b99acd373.png" alt=""></span><span>Before You</span></span>
+<span class="fu" style="display:flex;justify-content:center;align-items:flex-start;gap:.22em;animation-range:entry 20% entry 60%"><span>Commit</span><span class="pk k3"><img src="./assets/37ce0015b7faa61dd4010afb1c008376.png" alt=""></span></span>
+</h2>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 8 STORIES -->
+<section id="stories" class="s" style="padding-left:40px;padding-right:40px;padding-top:150px">
+<div style="padding:0 40px 56px">
+<div class="fu" style="display:flex;align-items:center;gap:16px;animation-range:entry 0% entry 40%"><span style="font-size:clamp(15px,1.4vw,20px);font-weight:500;letter-spacing:.01em;text-transform:uppercase;color:#DDA43E">Client success stories</span><span style="width:160px;height:1px;background:#DDA43E"></span></div>
+<h2 class="fu" style="font-size:clamp(44px,5.8vw,84px);font-weight:400;line-height:1.2;letter-spacing:-.035em;color:#000;max-width:900px;margin-top:28px;animation-range:entry 5% entry 45%">Featured Extraordinary Stories</h2>
+</div>
+<div class="acc zi">
+<a class="pn a" href="#stories"><img src="./assets/74c92f8ff9f34a6a8152e0540f38fd8c.webp" alt="NAK Hair campaign" style="object-position:40% 30%"><div class="t"><span class="l">Featured case study</span><div class="d"><strong style="font-size:20px">NAK Hair</strong><p>NAK Hair is an Australian-made and owned consumer products company, founded in 2003, and the country's third-biggest professional haircare company.</p><span>Read Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></span></div></div></a>
+<a class="pn b" href="#stories"><img src="./assets/8b6ae492f7702d6457516fed500d4a5d.png" alt="Quad Lock" style="object-position:50% 50%"><div class="t"><span class="l">Featured case study</span><div class="d"><strong style="font-size:20px">Quad Lock</strong><span>Read Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></span></div></div></a>
+<a class="pn c" href="#stories"><img src="./assets/921eb9895023b51cbb431c774629a33f.webp" alt="NAK Hair Structure Complex" style="object-position:50% 40%"><div class="t"><span class="l">Featured case study</span><div class="d"><strong style="font-size:20px">NAK Hair — Structure Complex</strong><p>NAK Hair is an Australian-made and owned consumer products company, founded in 2003, and the country's third-biggest professional haircare company.</p><span>Read Case Study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></span></div></div></a>
+</div>
+</section>
+
+<!-- 9 INSIGHTS -->
+<section id="insights" style="background:#F4F5EE">
+<div class="trk4">
+<div style="position:sticky;top:0;height:100vh;overflow:clip">
+<div class="s" style="position:relative;height:100%;padding-top:24px;padding-bottom:0">
+<div style="height:150px">
+<div class="fu" style="display:flex;align-items:center;gap:14px;animation-range:entry 0% entry 40%"><span style="font-size:15px;font-weight:500;letter-spacing:.01em;text-transform:uppercase;color:#AEB983">Discover Insights</span><span style="width:140px;height:1px;background:#AEB983"></span></div>
+<h2 class="fu" style="font-size:clamp(32px,3.6vw,52px);font-weight:600;line-height:1.1;letter-spacing:-.035em;margin:12px 0 10px;animation-range:entry 5% entry 45%">Perspectives on leadership.</h2>
+<p class="fu" style="font-size:16px;line-height:1.5;max-width:520px;animation-range:entry 10% entry 50%">Explore ideas and insights shaping executive leadership, talent strategy, and business growth.</p>
+</div>
+<a class="ic i4 " href="#insights" style="top:178px;z-index:2"><div class="im"><img src="./assets/84f4b61acfc91f3191fbfc8351b0694d.png" alt="" style="object-position:65% 40%"></div><div style="flex:1 1 44%;min-width:0;padding:16px 36px 16px 0;display:flex;flex-direction:column;gap:18px"><span style="font-size:15px;font-weight:500">March 14, 2025</span><h3 style="font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.2;letter-spacing:-.02em">The Biggest Mistakes Executives Make When Moving Roles</h3><p class="cp" style="font-size:15px;line-height:1.7">Career moves should go beyond title and compensation. The real value lies in expanding your strategic impact and shaping the future of an organization.</p></div></a>
+<a class="ic i4 c2" href="#insights" style="top:198px;z-index:3"><div class="im"><img src="./assets/5187aba007c6b4db4eb7dda44c924674.png" alt="" style="object-position:50% 40%"></div><div style="flex:1 1 44%;min-width:0;padding:16px 36px 16px 0;display:flex;flex-direction:column;gap:18px"><span style="font-size:15px;font-weight:500">February 13, 2025</span><h3 style="font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.2;letter-spacing:-.02em">The Hidden Executive Job Market: Why 80% of Leadership Roles Are Never Advertised</h3><p class="cp" style="font-size:15px;line-height:1.7">If you’re an executive looking for your next leadership role, relying on job boards or LinkedIn postings won’t get you far.</p></div></a>
+<a class="ic i4 c3" href="#insights" style="top:218px;z-index:4"><div class="im"><img src="./assets/04a8757935c6bd4eada4f3c29b9a098c.png" alt="" style="object-position:30% 50%"></div><div style="flex:1 1 44%;min-width:0;padding:16px 36px 16px 0;display:flex;flex-direction:column;gap:18px"><span style="font-size:15px;font-weight:500">June 14, 2024</span><h3 style="font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.2;letter-spacing:-.02em">7 Key Benefits of Improved CEO Stakeholder Engagement</h3><p class="cp" style="font-size:15px;line-height:1.7">Over the past 5 years Emu Search has had the privilege of working with some truly great CEOs, who’ve distinguished themselves by not just achieving financial targets or managing operations superbly (although this helps…) but by engaging expertly and effectively with their stakeholder groups.</p></div></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 9b FAQ -->
+<section id="faq" style="background:#fff">
+<div class="s row" style="display:flex;gap:80px;align-items:flex-start;padding-top:120px;padding-bottom:140px">
+<div style="flex:1 1 380px;min-width:0;position:sticky;top:120px;display:flex;flex-direction:column;gap:28px">
+<span class="fu" style="font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;animation-range:entry 0% entry 40%">FAQ</span>
+<h2 class="fu" style="font-size:clamp(38px,4.6vw,68px);font-weight:500;line-height:1.1;letter-spacing:-.035em;max-width:460px;animation-range:entry 5% entry 45%">Questions we <span style="color:#DDA43E">often</span> get.</h2>
+<p class="fu" style="font-size:15px;line-height:1.65;max-width:400px;color:#1F2F3DB3;animation-range:entry 10% entry 50%">Is your question not listed? Send a message and you will hear from us within one business day.</p>
+<div class="fu" style="animation-range:entry 15% entry 55%"><a class="bo" href="#contact" style="gap:10px;height:44px;font-size:14px;border-color:#DDA43E;color:#1F2F3D">Ask your question <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#DDA43E" stroke-width="2.5" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></a></div>
+</div>
+<div style="flex:1.3 1 520px;min-width:0;border-top:1px solid #1F2F3D26">
+<details class="fq fu" style="animation-range:entry 2% entry 32%"><summary>How long does a typical executive search take?</summary><p>Timelines depend on the seniority of the role and the state of the market. We agree a clear plan and milestones with you at the start, and keep you updated at every stage.</p></details>
+<details class="fq fu" style="animation-range:entry 6% entry 36%"><summary>What does a retained search involve?</summary><p>We map the market, assess leadership capability against what the role demands next, and engage candidates directly. You receive a considered shortlist, not a stack of CVs.</p></details>
+<details class="fq fu" style="animation-range:entry 10% entry 40%"><summary>How do you handle confidentiality?</summary><p>Many leadership moves are sensitive. We approach candidates discreetly and share information on a need-to-know basis throughout the process.</p></details>
+<details class="fq fu" style="animation-range:entry 14% entry 44%"><summary>Which roles and sectors do you cover?</summary><p>We specialise in leadership appointments for private equity investors and their portfolio companies, from Board and CEO through to functional C-suite and Director roles.</p></details>
+<details class="fq fu" style="animation-range:entry 18% entry 48%"><summary>How do you support the transition after an appointment?</summary><p>We stay close after an offer is accepted, helping both sides settle into the role so the appointment delivers value well beyond the first few months.</p></details>
+<details class="fq fu" style="animation-range:entry 22% entry 52%"><summary>Can I speak to a partner before committing?</summary><p>Yes. Get in touch and a partner will talk through your situation, the market and our approach, with no obligation.</p></details>
+</div>
+</div>
+</section>
+
+<!-- 10 CTA -->
+<div style="position:relative">
+<section id="contact" style="background:#fff;position:sticky;top:0;z-index:1">
+<div class="s row" style="display:flex;align-items:center;justify-content:space-between;gap:40px;padding-top:72px;padding-bottom:72px;border-top:1px solid #1F2F3D1F;border-bottom:1px solid #1F2F3D1F;margin:0 80px;max-width:none;padding-left:0;padding-right:0">
+<div style="max-width:520px;display:flex;flex-direction:column;gap:20px">
+<h2 class="fu" style="font-size:clamp(28px,2.6vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.03em;animation-range:entry 0% entry 50%">Considering your next leadership opportunity?</h2>
+<p class="fu" style="font-size:15px;line-height:1.6;animation-range:entry 10% entry 60%">Connect with our team to explore relevant opportunities and share your professional experience</p>
+</div>
+<a class="bo fu" href="#contact" style="gap:10px;height:42px;font-size:14px;animation-range:entry 20% entry 70%">Get in Touch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F2F3D" stroke-width="2" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></a>
+</div>
+</section>
+
+<!-- 11 FOOTER -->
+<footer style="background:#1F2F3D;color:#fff;position:relative;overflow:hidden;z-index:2">
+<div style="position:absolute;right:-220px;top:-220px;width:760px;height:760px;border:1px solid #ffffff33;border-radius:50%"></div>
+<div style="position:absolute;right:-120px;top:-120px;width:560px;height:560px;border:1px solid #ffffff33;border-radius:50%"></div>
+<div class="s" style="position:relative;padding-bottom:60px">
+<h2 class="fu" style="font-size:clamp(44px,6vw,88px);font-weight:300;line-height:1.1;letter-spacing:-.03em;max-width:1000px">The right leadership changes <span style="color:#DDA43E;font-weight:600">everything.</span></h2>
+<div class="row" style="display:flex;gap:64px;border-top:1px solid #ffffff40;margin-top:100px;padding-top:56px;flex-wrap:wrap">
+<div style="flex:1.4 1 280px"><div class="lgm" style="--w:128px"><img src="./assets/eff58810988572e665d2f068994b2f13.png" alt="emu" style="filter:brightness(0) invert(1)"></div><p style="font-size:17px;line-height:1.6;margin-top:20px;max-width:340px;color:#ffffffD9">Australian-owned boutique executive search firm with deep networks and industry knowledge in private equity.</p></div>
+<div style="flex:1 1 160px"><h3 style="font-size:18px;font-weight:600;margin-bottom:20px">Company</h3><div style="display:flex;flex-direction:column;gap:14px;font-size:15px;color:#ffffffCC"><a href="#about">About</a><a href="#expertise">Services</a><a href="#stories">Client Stories</a><a href="#insights">Insights</a></div></div>
+<div style="flex:1 1 160px"><h3 style="font-size:18px;font-weight:600;margin-bottom:20px">Services</h3><div style="display:flex;flex-direction:column;gap:14px;font-size:15px;color:#ffffffCC"><a href="#expertise">Find the Executive</a><a href="#insights">Insights</a><a href="#insights">Resources</a></div></div>
+</div>
+<div class="row" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:80px;flex-wrap:wrap">
+<div class="serif" style="font-size:clamp(64px,9vw,128px);line-height:1">Contact</div>
+<div class="pills" style="display:flex;gap:12px;flex-wrap:wrap;max-width:560px">
+<a class="pill" href="#contact" style="background:#fff;color:#1F2F3D">Email address</a><a class="pill" href="#contact" style="background:#000">LinkedIn</a><a class="pill" href="#contact" style="background:#fff;color:#1F2F3D">Instagram</a><a class="pill" href="#contact" style="background:#000">YouTube</a><a class="pill" href="#contact" style="background:#fff;color:#1F2F3D">Facebook</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6900}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
